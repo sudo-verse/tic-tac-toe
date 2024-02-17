@@ -7,6 +7,7 @@ body{
     background-color: #548687;
     text-align: center;
 }
+
 .container{
     height: 70vh;
     display: flex;
@@ -31,9 +32,11 @@ body{
     border: none;
     box-shadow: 0 0 1rem rgba(0,0,0,0.8);
     font-size: 8vmin;
-    color: #b0413e;
+   color: #b0413e;
     background-color: #ffffc7;
+    
    }
+   
 .reset{
     padding: 1rem;
     font-size: 1.25rem;
@@ -56,3 +59,61 @@ h1{
     text-decoration: underline;
     text-shadow: #b0413e;
 }
+body{
+    margin:0;
+    overflow-x:hidden;
+    }
+    
+    .footer{
+   
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:rgb(54, 52, 52);
+    transition:0.5s;
+    }
+    
+    .footer .row a:hover{
+    color:#fff;
+    }
+    
+    .footer .row ul{
+    width:100%;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+    }
