@@ -1,119 +1,157 @@
-*{
-    margin: 0;
-    padding: 0;
-
-}
-body{
-    background-color: #548687;
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(to right, #548687, #49797a);
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.game{
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: center;
-    align-items: center;
-    gap: 1.5vmin;
+
+h1 {
+  margin-top: 2rem;
+  font-size: 3rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  color: #ffffc7;
 }
-.box{
-    height:18vmin;
-    width: 18vmin;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.8);
-    font-size: 8vmin;
-   color: #b0413e;
-    background-color: #ffffc7;
-    
-   }
-   
-.reset{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: #fff;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.msg{
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vmin;
+  width: 60vmin;
+  height: 60vmin;
+}
+
+.box {
+  background-color: #ffffc7;
+  color: #b0413e;
+  font-size: 8vmin;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.box:hover:not(:disabled) {
+  background-color: #f0e68c;
+  transform: scale(1.05);
+}
+
+.box:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.reset {
+  margin: 1.5rem auto;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: #191913;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+  background-color: #333;
+}
+
+.msg {
+  font-size: 2rem;
+  margin: 1rem;
+  color: #ffffc7;
+  font-weight: bold;
+}
+
+#mode {
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+/* Footer */
+.footer {
+  font-family: 'Play', sans-serif;
+  background-color: #222;
+  color: #aaa;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer .row {
+  margin: 1rem 0;
+}
+
+.footer .row a {
+  color: #aaa;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer .row a:hover {
+  color: #ffffc7;
+}
+
+.footer .row ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.footer .row a i {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 720px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game {
+    width: 90vmin;
+    height: 90vmin;
+  }
+
+  .box {
     font-size: 10vmin;
-    color:whitesmoke;
-    margin: 2rem ;
+  }
+
+  .footer .row ul li {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
-.hide{ 
-    display: none;
-}
-h1{
-    font-size: 3rem;
-    text-decoration: underline;
-    text-shadow: #b0413e;
-}
-body{
-    margin:0;
-    overflow-x:hidden;
-    }
-    
-    .footer{
-   
-    padding:30px 0px;
-    font-family: 'Play', sans-serif;
-    text-align:center;
-    }
-    
-    .footer .row{
-    width:100%;
-    margin:1% 0%;
-    padding:0.6% 0%;
-    color:gray;
-    font-size:0.8em;
-    }
-    
-    .footer .row a{
-    text-decoration:none;
-    color:rgb(54, 52, 52);
-    transition:0.5s;
-    }
-    
-    .footer .row a:hover{
-    color:#fff;
-    }
-    
-    .footer .row ul{
-    width:100%;
-    }
-    
-    .footer .row ul li{
-    display:inline-block;
-    margin:0px 30px;
-    }
-    
-    .footer .row a i{
-    font-size:2em;
-    margin:0% 1%;
-    }
-    
-    @media (max-width:720px){
-    .footer{
-    text-align:left;
-    padding:5%;
-    }
-    .footer .row ul li{
-    display:block;
-    margin:10px 0px;
-    text-align:left;
-    }
-    .footer .row a i{
-    margin:0% 3%;
-    }
-    }
